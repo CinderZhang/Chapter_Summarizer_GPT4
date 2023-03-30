@@ -1,9 +1,14 @@
 ﻿$word = new-object -ComObject word.application
 $word.Visible = $false
 
-$source_dir = 'Z:\Shared\GitHub0323\Chapter_Summarizer_GPT4\chapter_doc'
-$dest_dir = 'Z:\Shared\GitHub0323\Chapter_Summarizer_GPT4\chapters_txt/'
-$saveFormat = [Enum]::Parse([Microsoft.Office.Interop.Word.WdSaveFormat], "wdFormatText");
+$source_dir = 'Z:/Shared/GitHub0323/Chapter_Summarizer_GPT4/chapters_doc/'
+$dest_dir = 'Z:/Shared/GitHub0323/Chapter_Summarizer_GPT4/chapters_txt/'
+
+Add-Type -AssemblyName "Microsoft.Office.Interop.Word"
+
+$saveFormat = [Enum]::Parse([Microsoft.Office.Interop.Word.WdSaveFormat], "2")
+
+#$saveFormat = [Enum]::Parse([Microsoft.Office.Interop.Word.WdSaveFormat], "wdFormatText");
 
 
 $files = Get-ChildItem -Path $source_dir | Where-Object {$_.Name -like "*.docx"}
