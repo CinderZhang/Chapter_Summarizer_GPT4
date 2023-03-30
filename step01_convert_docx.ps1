@@ -1,8 +1,8 @@
 ﻿$word = new-object -ComObject word.application
 $word.Visible = $false
 
-$source_dir = 'C:/Chapter_Summarizer_GPT4/chapters_doc/'
-$dest_dir = 'C:/Chapter_Summarizer_GPT4/chapters_txt/'
+$source_dir = 'Z:\Shared\GitHub0323\Chapter_Summarizer_GPT4\chapter_doc'
+$dest_dir = 'Z:\Shared\GitHub0323\Chapter_Summarizer_GPT4\chapters_txt/'
 $saveFormat = [Enum]::Parse([Microsoft.Office.Interop.Word.WdSaveFormat], "wdFormatText");
 
 
